@@ -3,12 +3,12 @@ import { Avatar } from "@mui/material";
 
 export default function About() {
   return (
-    <Box sx={{ backgroundColor: "#191327", color: "white" }}>
+    <Box sx={{ backgroundColor: "#191327", color: "white",p:"10px",borderBox:"box-sizing"}}>
       <h1 style={{ textAlign: "center" }}>About</h1>
-      <div style={{ display: "flex" }}>
-        <div
-          style={{
-            width: "50%",
+      <Box sx={{ display: { lg: "flex" } }}>
+        <Box
+          sx={{
+            width: { lg: "50%", sm: "100%", md: "100%" },
             paddingLeft: "50px",
             fontSize: "20px",
             fontWeight: "bold",
@@ -26,22 +26,22 @@ export default function About() {
             core knowledge of MERN stack technology. Looking forward to applying
             and enhancing my skills and knowledge as a developer.
           </p>
-        </div>
-        <div
-          style={{
-            width: "50%",
+        </Box>
+        <Box
+          sx={{
+            width: { lg: "50%", sm: "100%", xs: "100%" },
             display: "flex",
             justifyContent: "center",
-            alignContent: "center",
+            alignItem: "center",
           }}
         >
           <Avatar
-            src="./img2.jpg"
+            src="./img2.JPG"
             alt="Nitesh Sindhu"
-            sx={{ width: "50%", height: "70%" }}
+            sx={{ width: { lg: "50%", sm: "25%", xs: "50%" }, height: { lg:"90%",sm:"70%",xs:"70%"} }}
           />
-        </div>
-      </div>
+        </Box>
+      </Box>
     </Box>
   );
 }

@@ -12,8 +12,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { Avatar, Link } from "@mui/material";
+import { Avatar } from "@mui/material";
 import About from "./about";
+import Home from "./home";
+import Project from "./project";
+import Github from "./github";
 
 interface Props {
   /**
@@ -119,87 +122,11 @@ export default function Navbar(props: Props) {
       <Box component="main">
         <Toolbar />
         <Typography sx={{ backgrounColor: "#0a0416" }}>
-          <div
-            style={{
-              display: "flex",
-              boxSizing: "border-box",
-              backgroundColor: "#0a192f",
-              color: "white",
-            }}
-          >
-            <div
-              style={{
-                width: "50%",
-                display: "flex",
-                flexDirection: "column",
-                color: "white",
-                justifyContent: "center",
-                paddingLeft: "50px",
-                // border: "1px solid red",
-                boxSizing: "border-box",
-              }}
-            >
-              <h1>Hi There!</h1>
-              <h1>
-                I'M <span style={{ color: "#cd5ff8" }}>NITESH SINDHU</span>
-              </h1>
-              <Button
-                style={{
-                  color: "white",
-                  fontWeight: "bold",
-                  fontSize: "20px",
-                  display: "block",
-                  width: "fit-content",
-                }}
-              >
-                <Link
-                  href="https://drive.google.com/file/d/1sz41DUZj0qrHWskFS5tUz-EgVhnjiD1U/view?usp=sharing"
-                  target="_blank"
-                  style={{ textDecoration: "none", color: "white" }}
-                >
-                  Resume
-                </Link>
-              </Button>
-            </div>
-            <div style={{ width: "50%" }}>
-              <img
-                src="https://www.ravishukla.me/static/media/home-main.359935c39288e92d4dba5c9f2445b91d.svg"
-                style={{ height: "100%", width: "100%" }}
-                alt="img"
-              />
-            </div>
-          </div>
+         <Home/>
         </Typography>
-        {/* <Box sx={{ backgroundColor: "#191327", color: "white" }}>
-          <h1 style={{ textAlign: "center" }}>About</h1>
-          <div style={{ display: "flex" }}>
-            <div
-              style={{
-                width: "50%",
-                paddingLeft: "50px",
-                fontSize: "20px",
-                fontWeight: "bold",
-                boxSizing:"border-box"
-              }}
-            >
-              <p>
-                Hello stranger! 👋, my name is{" "}
-                <span style={{ color: "#cd5ff8" }}>NITESH SINDHU</span> and I am
-                a Full Stack Developer, passionate about building digital
-                products that improve everyday experience for people.
-              </p>
-              <p>
-                I am Quick learner and an aspiring full-stack web developer with
-                core knowledge of MERN stack technology. Looking forward to
-                applying and enhancing my skills and knowledge as a developer.
-              </p>
-            </div>
-            <div style={{width:"50%",display:"flex",justifyContent:"center",alignContent:"center"}}>
-              <Avatar src="./img2.jpg" alt="Nitesh Sindhu" sx={{width:"50%",height:"70%"}} />
-            </div>
-          </div>
-        </Box> */}
         <About />
+        <Project/>
+        <Github/>
       </Box>
     </Box>
   );

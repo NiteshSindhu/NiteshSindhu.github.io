@@ -5,6 +5,7 @@ function App() {
   return (
     <div className="App" style={{backgroundColor: "#191327"}}>
       <Navbar />
+      
     </div>
   );
 }
