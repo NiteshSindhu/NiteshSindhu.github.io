@@ -1,6 +1,10 @@
-import { Link, Button, Box } from "@mui/material";
-// import Typical from "typical";
+import { Link, Box } from "@mui/material";
+import "./home.css";
+import { saveAs } from "file-saver";
 export default function Home() {
+  const onButtonClick = () => {
+    saveAs('https://drive.google.com/u/0/uc?id=1sz41DUZj0qrHWskFS5tUz-EgVhnjiD1U&export=download')
+}
   return (
     <Box
       sx={{
@@ -26,25 +30,20 @@ export default function Home() {
         <h1>Hi There!</h1>
         <h1>
           I'M <span style={{ color: "#cd5ff8" }}>NITESH SINDHU</span>
-              </h1>
-        <Button
-          sx={{
-            color: "white",
-            fontWeight: "bold",
-            fontSize: "20px",
-            display: "block",
-            margin: "auto",
-            width: "fit-content",
-          }}
-        >
-          <Link
-            href="https://drive.google.com/file/d/1sz41DUZj0qrHWskFS5tUz-EgVhnjiD1U/view?usp=sharing"
-            target="_blank"
-            style={{ textDecoration: "none", color: "white" }}
-          >
-            Resume
-          </Link>
-        </Button>
+        </h1>
+        <p alig="center">
+<img src="https://readme-typing-svg.herokuapp.com?&font=IBM+Plex+Sans&color=abcdei&size=22&lines=Problem Solver!;I'm+a+Full-Stack+Web+Developer;I'm+a+Software+Engineer" alt="resume"/>
+</p>
+        <button data-aos="fade-left"  className="btn"onClick={onButtonClick}>
+              <Link
+                href="https://drive.google.com/file/d/1sz41DUZj0qrHWskFS5tUz-EgVhnjiD1U/view?usp=sharing"
+                target="_blank"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                Download CV
+              </Link>
+            </button>
+            {/* <a href="../Resume/Nitesh_Sindhu.pdf" download> */}
       </Box>
       <Box sx={{ width: "50%", display: "flex", margin: "auto" }}>
         <img

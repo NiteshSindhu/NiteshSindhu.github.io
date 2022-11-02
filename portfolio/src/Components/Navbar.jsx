@@ -13,11 +13,9 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Avatar } from "@mui/material";
-import About from "./about";
-import Home from "./home";
-import Project from "./project";
-import Github from "./github";
-
+import { Link, animateScroll } from "react-scroll";
+import { useState } from "react";
+import { saveAs } from "file-saver";
 interface Props {
   /**
    * Injected by the documentation to work in an iframe.
@@ -27,10 +25,21 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Skills", "Projects", "Contact", "Resume"];
-
+const navItems = [
+  { name: "Home", link: "/" },
+  { name: "About", link: "about" },
+  { name: "Skills", link: "skills" },
+  { name: "Projects", link: "projects" },
+  { name: "Contact", link: "contact" },
+  { name: "Resume", link: "bt" },
+];
+const onButtonClick = () => {
+    saveAs('https://drive.google.com/u/0/uc?id=1sz41DUZj0qrHWskFS5tUz-EgVhnjiD1U&export=download')
+}
 export default function Navbar(props: Props) {
   const { window } = props;
+  const [head, setHead] = useState(false);
+
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -44,11 +53,36 @@ export default function Navbar(props: Props) {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
+        {navItems.map((item, index) => (
+          <ListItem key={index} disablePadding>
+            {item.link != "bt" ? (
+              <Link
+                activeClass="active"
+                to={item.link}
+                onClick={() => {
+                  item.link === "/"
+                    ? animateScroll.scrollToTop()
+                    : setHead(true);
+                }}
+                spy={true}
+                smooth={true}
+              >
+                <ListItemButton sx={{ textAlign: "center" }}>
+                  <ListItemText primary={item.name} />
+                </ListItemButton>
+              </Link>
+            ) : (
+              <a
+                href="https://drive.google.com/file/d/1sz41DUZj0qrHWskFS5tUz-EgVhnjiD1U/view?usp=sharing"
+                target="_blank"
+                rel="noreferrer"
+                style={{ textDecoration: "none",color:"#000000DE" }}
+              >
+                <ListItemButton sx={{ textAlign: "center" }}>
+                  <ListItemText primary={item.name} />
+                </ListItemButton>
+              </a>
+            )}
           </ListItem>
         ))}
       </List>
@@ -59,7 +93,7 @@ export default function Navbar(props: Props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex" }} >
       <AppBar component="nav">
         <Toolbar>
           <IconButton
@@ -79,22 +113,37 @@ export default function Navbar(props: Props) {
               display: { xs: "none", sm: "block" },
               pl: "20px",
             }}
-          >
+          ><a href="/">
+
             <Avatar src="./logo1.jpg" sx={{ width: 56, height: 56 }} />
+          </a>
           </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" }, pr: "20px" }}>
-            {navItems.map((item) => (
-              <Button
-                key={item.title}
-                sx={{
-                  color: "#fff",
-                  fontWeight: "bold",
-                  px: "30px",
-                  fontSize: "20px",
+          <Box sx={{ display: { xs: "none", sm: "block" }, pr: "20px" }} id="nav">
+                      {navItems.map((item,index) => (
+               
+              <Link
+                activeClass="active"
+                to={item.link}
+                onClick={() => {
+                  item.link === "/"
+                    ? animateScroll.scrollToTop(): setHead(true);
                 }}
+                spy={true}
+                smooth={true}
               >
-                {item}
-              </Button>
+                <Button
+                  key={index}
+                  sx={{
+                    color: "#fff",
+                    fontWeight: "bold",
+                    px: "30px",
+                    fontSize: "20px",
+                  }}
+                                  onClick={()=>{item.link === "bt" ? onButtonClick() : setHead(true)}}
+                              >
+                  {item.name}
+                </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>
@@ -121,12 +170,6 @@ export default function Navbar(props: Props) {
       </Box>
       <Box component="main">
         <Toolbar />
-        <Typography sx={{ backgrounColor: "#0a0416" }}>
-         <Home/>
-        </Typography>
-        <About />
-        <Project/>
-        <Github/>
       </Box>
     </Box>
   );

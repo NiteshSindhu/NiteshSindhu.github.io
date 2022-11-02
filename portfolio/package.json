@@ -1,25 +1,32 @@
 {
   "homepage": "https://niteshsindhu.github.io",
-  "name": "portfolio",
+  "name": "port",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@chakra-ui/react": "^2.3.5",
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
+    "@chakra-ui/icons": "^2.0.11",
+    "@chakra-ui/react": "^2.3.6",
+    "@emailjs/browser": "^3.7.0",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.10.9",
-    "@mui/material": "^5.10.9",
+    "@mui/material": "^5.10.11",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "framer-motion": "^7.5.3",
+    "aos": "^2.3.4",
+    "file-saver": "^2.0.5",
+    "framer-motion": "^7.6.2",
     "github-calendar": "^2.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-github-calendar": "^3.3.4",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
-    "typical": "^7.1.1",
+    "react-scroll": "^1.8.8",
+    "react-switch": "^7.0.0",
+    "styled-components": "^5.3.6",
+    "theme": "^0.1.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -47,5 +54,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
