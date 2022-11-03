@@ -14,7 +14,7 @@ const Github = () => {
         <MainContainer style={{ marginTop: "-20px",backgroundColor: "#0a192f",color:'white',padding:"20px 0px 20px 0px" }} data-aos='zoom-in-down'>
             <h1 style={{ color: "#FFE433", textTransform: "uppercase" }}>Days I Worked</h1>
             <Container>
-                <GithubCalendar username='Anukriti-Nawani'year={new Date().getFullYear()} blockSize={15} blockMargin={5} fontSize={16} />
+                <GithubCalendar username='NiteshSindhu'year={new Date().getFullYear()} blockSize={15} blockMargin={5} fontSize={16} />
             </Container>
 
             <h1 style={{ color: "white", textTransform: "uppercase" }}>my github statistics</h1>
