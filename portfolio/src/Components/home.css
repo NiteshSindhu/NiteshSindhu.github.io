@@ -19,3 +19,15 @@
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
   }
+  .img{
+    padding:8vh 5vh 5vh 5vh;
+    width: 50%; display: flex;margin: auto;
+    box-sizing: border-box;
+  }
+
+  @media screen and (min-width:0) and (max-width:770px){
+    .img{
+      padding: 1vh 1vh;
+      width: 100%;
+    }
+  }

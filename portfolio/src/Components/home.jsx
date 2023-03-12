@@ -45,9 +45,9 @@ export default function Home() {
             </button>
             {/* <a href="../Resume/Nitesh_Sindhu.pdf" download> */}
       </Box>
-      <Box sx={{ width: "50%", display: "flex", margin: "auto" }}>
+      <Box className="img">
         <img
-          src="https://www.ravishukla.me/static/media/home-main.359935c39288e92d4dba5c9f2445b91d.svg"
+          src="./home.gif"
           style={{ height: "100%", width: "100%" }}
           alt="img"
         />
